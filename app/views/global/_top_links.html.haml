@@ -1,0 +1,11 @@
+.container.nav-collapse
+  %ul.nav
+    -if @current_user
+      %li.login-text
+        Witaj,
+        = @current_user.name
+      %li= link_to 'Wyloguj', sign_out_path, :method => :delete
+    -else
+      %li= link_to 'Zaloguj', sign_in_path
+
+
